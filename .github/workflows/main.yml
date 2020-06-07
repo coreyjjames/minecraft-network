@@ -12,14 +12,12 @@ jobs:
 
     - name: Checkout master and set directory to uhc
       uses: actions/checkout@master
-      with:
-        path: DockerImages/uhc
 
     - name: Update SHA
       run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/_meta
 
     - name: Build container image
-      run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:$(echo $GITHUB_SHA | head -c7) .
+      run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/uhc
 
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
@@ -45,18 +43,9 @@ jobs:
       run: kubectl rollout status deployment/minecraft-uhc
     
     
-    
-    
-    - name: Checkout master and set directory to lobby
-      uses: actions/checkout@master
-      with:
-        path: DockerImages/lobby
-
-    - name: Update SHA
-      run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/site/_meta
 
     - name: Build container image
-      run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby:$(echo $GITHUB_SHA | head -c7) .
+      run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/lobby
 
     - name: Push image to DigitalOcean Container Registry
       run: docker push registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby
@@ -72,26 +61,14 @@ jobs:
 
 
 
-
-    - name: Checkout master and set directory to bungeecord
-      uses: actions/checkout@master
-      with:
-        path: DockerImages/bungeecord
-
-    - name: Update SHA
-      run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/site/_meta
-
     - name: Build container image
-      run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:$(echo $GITHUB_SHA | head -c7) .
+      run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/bungeecord
 
     - name: Push image to DigitalOcean Container Registry
       run: docker push registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord
 
     - name: Update deployment file
       run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:'${TAG}'|' $GITHUB_WORKSPACE/DockerImages/bungeecord/config/bungeecord-deployment.yml
-
-    - name: Save DigitalOcean kubeconfig
-      run: doctl kubernetes cluster kubeconfig save minecraft-network
 
     - name: Deploy to DigitalOcean Kubernetes
       run: kubectl apply -f $GITHUB_WORKSPACE/DockerImages/bungeecord/config/bungeecord-deployment.yml
