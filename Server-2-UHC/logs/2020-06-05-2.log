@@ -1,0 +1,167 @@
+[22:37:58] [Server thread/INFO]: Starting minecraft server version 1.8.8
+[22:37:58] [Server console handler/ERROR]: Exception handling console input
+java.io.IOException: The handle is invalid
+	at java.io.FileInputStream.readBytes(Native Method) ~[?:1.8.0_221]
+	at java.io.FileInputStream.read(FileInputStream.java:255) ~[?:1.8.0_221]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246) ~[?:1.8.0_221]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265) ~[?:1.8.0_221]
+	at org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:248) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.internal.InputStreamReader.read(InputStreamReader.java:261) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.internal.InputStreamReader.read(InputStreamReader.java:198) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readCharacter(ConsoleReader.java:2145) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readLineSimple(ConsoleReader.java:3183) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readLine(ConsoleReader.java:2333) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readLine(ConsoleReader.java:2269) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readLine(ConsoleReader.java:2257) ~[spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+	at net.minecraft.server.v1_8_R3.DedicatedServer$2.run(DedicatedServer.java:81) [spigot-1.8.8.jar:git-Spigot-21fe707-e1ebe52]
+[22:37:58] [Server thread/INFO]: Loading properties
+[22:37:59] [Server thread/INFO]: Default game type: SURVIVAL
+[22:37:59] [Server thread/INFO]: This server is running CraftBukkit version git-Spigot-21fe707-e1ebe52 (MC: 1.8.8) (Implementing API version 1.8.8-R0.1-SNAPSHOT)
+[22:37:59] [Server thread/INFO]: Debug logging is disabled
+[22:37:59] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:37:59] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:37:59] [Server thread/INFO]: Generating keypair
+[22:38:00] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25566
+[22:38:00] [Server thread/INFO]: Using default channel type
+[22:38:05] [Server thread/INFO]: Starting minecraft server version 1.8.8
+[22:38:05] [Server thread/INFO]: Loading properties
+[22:38:05] [Server thread/INFO]: Default game type: SURVIVAL
+[22:38:05] [Server thread/INFO]: This server is running CraftBukkit version git-Spigot-21fe707-e1ebe52 (MC: 1.8.8) (Implementing API version 1.8.8-R0.1-SNAPSHOT)
+[22:38:05] [Server thread/INFO]: Debug logging is disabled
+[22:38:05] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:38:05] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:38:05] [Server thread/INFO]: Generating keypair
+[22:38:06] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25566
+[22:38:06] [Server thread/INFO]: Using default channel type
+[22:38:07] [Server thread/WARN]: **** FAILED TO BIND TO PORT!
+[22:38:07] [Server thread/WARN]: The exception was: java.net.BindException: Address already in use: bind
+[22:38:07] [Server thread/WARN]: Perhaps a server is already running on that port?
+[22:38:07] [Server thread/INFO]: Stopping server
+[22:38:07] [Server thread/INFO]: Saving players
+thread/INFO]: View Distance: 10
+[22:38:01] [Server thread/INFO]: Chunks to Grow per Tick: 650
+[22:38:01] [Server thread/INFO]: Clear tick list: false
+[22:38:01] [Server thread/INFO]: Experience Merge Radius: 3.0
+[22:38:01] [Server thread/INFO]: Max TNT Explosions: 100
+[22:38:01] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[22:38:01] [Server thread/INFO]: Item Merge Radius: 2.5
+[22:38:01] [Server thread/INFO]: Item Despawn Rate: 6000
+[22:38:01] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[22:38:01] [Server thread/INFO]: Anti X-Ray: true
+[22:38:01] [Server thread/INFO]: 	Engine Mode: 1
+[22:38:01] [Server thread/INFO]: 	Hidden Blocks: [14, 15, 16, 21, 48, 49, 54, 56, 73, 74, 82, 129, 130]
+[22:38:01] [Server thread/INFO]: 	Replace Blocks: [1, 5]
+[22:38:01] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 8 Hopper Amount: 1
+[22:38:01] [Server thread/INFO]: Mob Spawn Range: 4
+[22:38:01] [Server thread/INFO]: Random Lighting Updates: false
+[22:38:01] [Server thread/INFO]: Structure Info Saving: true
+[22:38:01] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[22:38:01] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Cane Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Melon Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
+[22:38:01] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16
+[22:38:01] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617
+[22:38:01] [Server thread/INFO]: Max Entity Collisions: 8
+[22:38:01] [Server thread/INFO]: -------- World Settings For [world_nether] --------
+[22:38:01] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[22:38:01] [Server thread/INFO]: Sending up to 10 chunks per packet
+[22:38:01] [Server thread/INFO]: Arrow Despawn Rate: 1200
+[22:38:01] [Server thread/INFO]: View Distance: 10
+[22:38:01] [Server thread/INFO]: Chunks to Grow per Tick: 650
+[22:38:01] [Server thread/INFO]: Clear tick list: false
+[22:38:01] [Server thread/INFO]: Experience Merge Radius: 3.0
+[22:38:01] [Server thread/INFO]: Max TNT Explosions: 100
+[22:38:01] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[22:38:01] [Server thread/INFO]: Item Merge Radius: 2.5
+[22:38:01] [Server thread/INFO]: Item Despawn Rate: 6000
+[22:38:01] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[22:38:01] [Server thread/INFO]: Anti X-Ray: true
+[22:38:01] [Server thread/INFO]: 	Engine Mode: 1
+[22:38:01] [Server thread/INFO]: 	Hidden Blocks: [14, 15, 16, 21, 48, 49, 54, 56, 73, 74, 82, 129, 130]
+[22:38:01] [Server thread/INFO]: 	Replace Blocks: [1, 5]
+[22:38:01] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 8 Hopper Amount: 1
+[22:38:01] [Server thread/INFO]: Mob Spawn Range: 4
+[22:38:01] [Server thread/INFO]: Random Lighting Updates: false
+[22:38:01] [Server thread/INFO]: Structure Info Saving: true
+[22:38:01] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[22:38:01] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Cane Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Melon Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
+[22:38:01] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16
+[22:38:01] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617
+[22:38:01] [Server thread/INFO]: Max Entity Collisions: 8
+[22:38:01] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
+[22:38:01] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[22:38:01] [Server thread/INFO]: Sending up to 10 chunks per packet
+[22:38:01] [Server thread/INFO]: Arrow Despawn Rate: 1200
+[22:38:01] [Server thread/INFO]: View Distance: 10
+[22:38:01] [Server thread/INFO]: Chunks to Grow per Tick: 650
+[22:38:01] [Server thread/INFO]: Clear tick list: false
+[22:38:01] [Server thread/INFO]: Experience Merge Radius: 3.0
+[22:38:01] [Server thread/INFO]: Max TNT Explosions: 100
+[22:38:01] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[22:38:01] [Server thread/INFO]: Item Merge Radius: 2.5
+[22:38:01] [Server thread/INFO]: Item Despawn Rate: 6000
+[22:38:01] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[22:38:01] [Server thread/INFO]: Anti X-Ray: true
+[22:38:01] [Server thread/INFO]: 	Engine Mode: 1
+[22:38:01] [Server thread/INFO]: 	Hidden Blocks: [14, 15, 16, 21, 48, 49, 54, 56, 73, 74, 82, 129, 130]
+[22:38:01] [Server thread/INFO]: 	Replace Blocks: [1, 5]
+[22:38:01] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 8 Hopper Amount: 1
+[22:38:01] [Server thread/INFO]: Mob Spawn Range: 4
+[22:38:01] [Server thread/INFO]: Random Lighting Updates: false
+[22:38:01] [Server thread/INFO]: Structure Info Saving: true
+[22:38:01] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[22:38:01] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Cane Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Melon Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[22:38:01] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
+[22:38:01] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16
+[22:38:01] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617
+[22:38:01] [Server thread/INFO]: Max Entity Collisions: 8
+[22:38:01] [Server thread/INFO]: Preparing start region for level 0 (Seed: 5115869829674065093)
+[22:38:02] [Server thread/INFO]: Preparing spawn area: 7%
+[22:38:03] [Server thread/INFO]: Preparing spawn area: 15%
+[22:38:04] [Server thread/INFO]: Preparing spawn area: 24%
+[22:38:05] [Server thread/INFO]: Preparing spawn area: 31%
+[22:38:06] [Server thread/INFO]: Preparing spawn area: 39%
+[22:38:07] [Server thread/INFO]: Preparing spawn area: 49%
+[22:38:08] [Server thread/INFO]: Preparing spawn area: 64%
+[22:38:09] [Server thread/INFO]: Preparing spawn area: 76%
+[22:38:10] [Server thread/INFO]: Preparing spawn area: 95%
+[22:38:10] [Server thread/INFO]: Preparing start region for level 1 (Seed: 5115869829674065093)
+[22:38:11] [Server thread/INFO]: Preparing start region for level 2 (Seed: 5115869829674065093)
+[22:38:11] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:38:11] [Server thread/INFO]: Done (10.904s)! For help, type "help" or "?"
+[22:38:34] [Server thread/INFO]: Starting minecraft server version 1.8.8
+[22:38:34] [Server thread/INFO]: Loading properties
+[22:38:34] [Server thread/INFO]: Default game type: SURVIVAL
+[22:38:34] [Server thread/INFO]: This server is running CraftBukkit version git-Spigot-21fe707-e1ebe52 (MC: 1.8.8) (Implementing API version 1.8.8-R0.1-SNAPSHOT)
+[22:38:34] [Server thread/INFO]: Debug logging is disabled
+[22:38:34] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:38:34] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:38:34] [Server thread/INFO]: Generating keypair
+[22:38:34] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25566
+[22:38:34] [Server thread/INFO]: Using default channel type
+[22:38:35] [Server thread/WARN]: **** FAILED TO BIND TO PORT!
+[22:38:35] [Server thread/WARN]: The exception was: java.net.BindException: Address already in use: bind
+[22:38:35] [Server thread/WARN]: Perhaps a server is already running on that port?
+[22:38:35] [Server thread/INFO]: Stopping server
+[22:38:35] [Server thread/INFO]: Saving players

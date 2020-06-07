@@ -1,0 +1,9 @@
+{
+  "allowNether": true,
+  "allowEnd": false,
+  "maxPlayers": 100,
+  "gracePeriodTime": 5,
+  "boarderShrinkTime": 30,
+  "startingBorderSize": 1000,
+  "boarderShrinkSize": 100
+}
