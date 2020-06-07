@@ -16,6 +16,12 @@ jobs:
     - name: Update SHA
       run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/_meta
 
+    - name: Login to GitHub Docker Registry
+      run: docker login docker.pkg.github.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          
     - name: Build container image
       run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/uhc
 
