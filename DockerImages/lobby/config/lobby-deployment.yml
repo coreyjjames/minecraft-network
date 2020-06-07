@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: minecraft-lobby
-          image: registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby:latest
+          image: <IMAGE>
           command: ["java"]
           args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC" , "-jar" , "spigot-1.8.8.jar"]
       tolerations:

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: minecraft-bungeecord
-          image: registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:latest
+          image: <IMAGE>
           command: ["java"]
           args: ["-Xms1G", "-Xmx1G", "-jar" , "BungeeCord.jar"]
           ports:
