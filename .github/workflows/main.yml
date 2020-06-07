@@ -17,7 +17,7 @@ jobs:
       run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/_meta
 
     - name: Login to GitHub Docker Registry
-      run: docker login docker.pkg.github.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+      run: cat $DOCKER_PASSWORD | docker login docker.pkg.github.com --username $DOCKER_USERNAME --password-stdin
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
