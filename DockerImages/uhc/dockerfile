@@ -1,0 +1,9 @@
+FROM ubuntu:latest
+
+WORKDIR /home
+
+RUN git clone https://github.com/coreyjjames/minecraft-network.git
+
+RUN cd minecraft-network/UHC-Instance
+
+RUN start.bat
