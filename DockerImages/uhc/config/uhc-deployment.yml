@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-uhc
+  namespace: default
+  labels:
+    app: minecraft-uhc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-uhc
+  template:
+    metadata:
+      labels:
+        app: minecraft-uhc
+    spec:
+      containers:
+        - name: minecraft-uhc
+          image: registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:latest
+          command: ["java"]
+          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC " , "-jar" , "spigot-1.8.8.jar"]
+      tolerations:
+        - key: "server"
+          operation: "Equal"
+          value: "uhc"
+          effect: "NoSchedule"

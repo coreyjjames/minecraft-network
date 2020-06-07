@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-lobby
+  namespace: default
+  labels:
+    app: minecraft-lobby
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-lobby
+  template:
+    metadata:
+      labels:
+        app: minecraft-lobby
+    spec:
+      containers:
+        - name: minecraft-lobby
+          image: registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby:latest
+          command: ["java"]
+          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC " , "-jar" , "spigot-1.8.8.jar"]
+      tolerations:
+        - key: "server"
+          operation: "Equal"
+          value: "lobby"
+          effect: "NoSchedule"

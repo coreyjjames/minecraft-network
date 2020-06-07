@@ -17,4 +17,14 @@ spec:
     spec:
       containers:
         - name: minecraft-bungeecord
-          image: coreyjjames/minecraft-bungeecord:latest
+          image: registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:latest
+          command: ["java"]
+          args: ["-Xms1G", "-Xmx1G", "-jar" , "BungeeCord.jar"]
+      tolerations:
+        - key: "server"
+          operation: "Equal"
+          value: "bungeecord"
+          effect: "NoSchedule"
+
+
+              
