@@ -21,7 +21,11 @@ jobs:
         login-server: index.docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-          
+    - run: |
+        docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/bungeecord
+        docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/uhc
+        docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/lobby
+        
     - name: Build container image for Bungeecord server
       run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:$(echo $GITHUB_SHA | head -c7) $GITHUB_WORKSPACE/DockerImages/bungeecord
     
