@@ -1,9 +1,10 @@
-FROM ubuntu:latest
+FROM store/oracle/serverjre:8
 
+RUN yum -y install git
 WORKDIR /home
-
+RUN git --version
 RUN git clone https://github.com/coreyjjames/minecraft-network.git
 
-RUN cd minecraft-network/UHC-Instance
+WORKDIR /home/minecraft-network/UHC-Instance
 
-RUN start.bat
+#RUN java -Xms2G -Xmx2G -XX:+UseConcMarkSweepGC -jar spigot-1.8.8.jar

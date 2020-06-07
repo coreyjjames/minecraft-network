@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-bungeecord
+  namespace: default
+  labels:
+    app: minecraft-bungeecord
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-bungeecord
+  template:
+    metadata:
+      labels:
+        app: minecraft-bungeecord
+    spec:
+      containers:
+        - name: minecraft-bungeecord
+          image: coreyjjames/minecraft-bungeecord:latest
