@@ -20,11 +20,24 @@ spec:
           image: registry.digitalocean.com/coreyjjames-ocean/minecraft-bungeecord:latest
           command: ["java"]
           args: ["-Xms1G", "-Xmx1G", "-jar" , "BungeeCord.jar"]
+          ports:
+          - containerPort: 25577
       tolerations:
-        - key: "server"
-          operation: "Equal"
-          value: "bungeecord"
-          effect: "NoSchedule"
-
-
-              
+      - key: "server"
+        operator: "Equal"
+        value: "bungeecord"
+        effect: "NoSchedule"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-network-service
+spec:
+  type: LoadBalancer
+  ports:
+    - name: minecraft-network-service
+      protocol: TCP
+      port: 25577
+      targetPort: 25577
+  selector:
+    app: minecraft-bungeecord

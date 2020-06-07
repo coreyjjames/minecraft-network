@@ -19,9 +19,9 @@ spec:
         - name: minecraft-lobby
           image: registry.digitalocean.com/coreyjjames-ocean/minecraft-lobby:latest
           command: ["java"]
-          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC " , "-jar" , "spigot-1.8.8.jar"]
+          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC" , "-jar" , "spigot-1.8.8.jar"]
       tolerations:
-        - key: "server"
-          operation: "Equal"
-          value: "lobby"
-          effect: "NoSchedule"
+      - key: "server"
+        operator: "Equal"
+        value: "lobby"
+        effect: "NoSchedule"

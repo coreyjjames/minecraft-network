@@ -19,9 +19,9 @@ spec:
         - name: minecraft-uhc
           image: registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:latest
           command: ["java"]
-          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC " , "-jar" , "spigot-1.8.8.jar"]
+          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC" , "-jar" , "spigot-1.8.8.jar"]
       tolerations:
-        - key: "server"
-          operation: "Equal"
-          value: "uhc"
-          effect: "NoSchedule"
+      - key: "server"
+        operator: "Equal"
+        value: "uhc"
+        effect: "NoSchedule"
