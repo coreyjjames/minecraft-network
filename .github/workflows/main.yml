@@ -16,7 +16,7 @@ jobs:
         path: DockerImages/uhc
 
     - name: Update SHA
-      run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/site/_meta
+      run: echo $GITHUB_SHA > $GITHUB_WORKSPACE/_meta
 
     - name: Build container image
       run: docker build -t registry.digitalocean.com/coreyjjames-ocean/minecraft-uhc:$(echo $GITHUB_SHA | head -c7) .
