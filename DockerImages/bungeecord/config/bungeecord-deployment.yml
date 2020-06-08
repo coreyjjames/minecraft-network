@@ -18,8 +18,43 @@ spec:
       containers:
         - name: minecraft-bungeecord
           image: <IMAGE>
-          command: ["java"]
-          args: ["-Xms1G", "-Xmx1G", "-jar" , "BungeeCord.jar"]
+          env:
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_URI
+            - name: MONGODB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_PORT
+            - name: MONGODB_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_DATABASE
+            - name: MONGODB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_USER
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_PASSWORD
+          command: ["/bin/sh", "-c"]
+          args:
+            - sed -i 's|<MONGODB_URI>|'${MONGODB_URI}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MONGODB_PORT>|'${MONGODB_PORT}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MONGODB_DATABASE>|'${MONGODB_DATABASE}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MongoDB_USER>|'${MONGODB_USER}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MongoDB_PASSWORD>|'${MONGODB_PASSWORD}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MINECRAFT_LOBBY>|'${MINECRAFT_LOBBY_SERVICE_SERVICE_HOST}':'${MINECRAFT_LOBBY_SERVICE_SERVICE_PORT}'|' config.yml;
+              sed -i 's|<MINECRAFT_UHC>|'${MINECRAFT_UHC_SERVICE_SERVICE_HOST}':'${MINECRAFT_UHC_SERVICE_SERVICE_PORT}'|' config.yml;
+              screen -dmS bungeecord java -Xms1G -Xmx1G -jar BungeeCord.jar;
+              sleep infinity;
           ports:
           - containerPort: 25577
       tolerations:
@@ -27,7 +62,9 @@ spec:
         operator: "Equal"
         value: "bungeecord"
         effect: "NoSchedule"
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:

@@ -7,4 +7,4 @@ RUN git clone https://github.com/coreyjjames/minecraft-network.git
 
 WORKDIR /home/minecraft-network/BungeeCord
 
-#RUN java -Xms2G -Xmx2G -XX:+UseConcMarkSweepGC -jar spigot-1.8.8.jar
+RUN yum -y install screen

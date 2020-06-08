@@ -18,10 +18,59 @@ spec:
       containers:
         - name: minecraft-lobby
           image: <IMAGE>
-          command: ["java"]
-          args: ["-Xms1G", "-Xmx1G", "-XX:+UseConcMarkSweepGC" , "-jar" , "spigot-1.8.8.jar"]
+          env:
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_URI
+            - name: MONGODB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_PORT
+            - name: MONGODB_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_DATABASE
+            - name: MONGODB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_USER
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: MONGODB_PASSWORD
+          command: ["/bin/sh", "-c"]
+          args:
+            - sed -i 's|<MONGODB_URI>|'${MONGODB_URI}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MONGODB_PORT>|'${MONGODB_PORT}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MONGODB_DATABASE>|'${MONGODB_DATABASE}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MongoDB_USER>|'${MONGODB_USER}'|' ./plugins/LuckPerms/config.yml;
+              sed -i 's|<MongoDB_PASSWORD>|'${MONGODB_PASSWORD}'|' ./plugins/LuckPerms/config.yml;
+              screen -dmS bungeecord java -Xms1G -Xmx1G -XX:+UseConcMarkSweepGC -jar spigot-1.8.8.jar;
+              sleep infinity;
+          ports:
+          - containerPort: 25577
       tolerations:
       - key: "server"
         operator: "Equal"
         value: "lobby"
         effect: "NoSchedule"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-lobby-service
+spec:
+  selector:
+    app: minecraft-lobby
+  ports:
+  - protocol: TCP
+    port: 25565
+    targetPort: 25565

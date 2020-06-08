@@ -1,6 +1,6 @@
 listeners:
 - query_port: 25577
-  motd: '&1Another Bungee server'
+  motd: '&1Bungee server'
   tab_list: GLOBAL_PING
   query_enabled: false
   proxy_protocol: false
@@ -46,9 +46,9 @@ disabled_commands:
 servers:
   lobby:
     motd: '&1Just another BungeeCord - Forced Host'
-    address: localhost:25565
+    address: <MINECRAFT_LOBBY>
     restricted: false
   UHC:
     motd: '&1Just another BungeeCord - Forced Host'
-    address: localhost:25567
+    address: <MINECRAFT_UHC>
     restricted: false
