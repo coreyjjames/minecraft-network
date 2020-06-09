@@ -23,27 +23,27 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mongodb
-                  key: MONGODB_URI
+                  key: data.MONGODB_URI
             - name: MONGODB_PORT
               valueFrom:
                 secretKeyRef:
                   name: mongodb
-                  key: MONGODB_PORT
+                  key: data.MONGODB_PORT
             - name: MONGODB_DATABASE
               valueFrom:
                 secretKeyRef:
                   name: mongodb
-                  key: MONGODB_DATABASE
+                  key: data.MONGODB_DATABASE
             - name: MONGODB_USER
               valueFrom:
                 secretKeyRef:
                   name: mongodb
-                  key: MONGODB_USER
+                  key: data.MONGODB_USER
             - name: MONGODB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mongodb
-                  key: MONGODB_PASSWORD
+                  key: data.MONGODB_PASSWORD
           command: ["/bin/sh", "-c"]
           args:
             - sed -i 's|<MONGODB_URI>|'${MONGODB_URI}'|' ./plugins/LuckPerms/config.yml;
