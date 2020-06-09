@@ -51,7 +51,7 @@ spec:
               sed -i 's|<MONGODB_DATABASE>|'${MONGODB_DATABASE}'|' ./plugins/LuckPerms/config.yml;
               sed -i 's|<MongoDB_USER>|'${MONGODB_USER}'|' ./plugins/LuckPerms/config.yml;
               sed -i 's|<MongoDB_PASSWORD>|'${MONGODB_PASSWORD}'|' ./plugins/LuckPerms/config.yml;
-              screen -dmS bungeecord java -Xms1G -Xmx1G -XX:+UseConcMarkSweepGC -jar spigot-1.8.8.jar;
+              screen -dmS lobby java -Xms1G -Xmx1G -XX:+UseConcMarkSweepGC -jar spigot-1.8.8.jar;
               sleep infinity;
           ports:
           - containerPort: 25577
